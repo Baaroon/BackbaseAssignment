@@ -16,6 +16,8 @@
 		13E1887A2175A1FF00232A29 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188792175A1FF00232A29 /* LocationViewController.swift */; };
 		13E1887F2175A30600232A29 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E1887E2175A30600232A29 /* Cities.json */; };
 		13E188822175A52800232A29 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188812175A52800232A29 /* Model.swift */; };
+		13E188842176114E00232A29 /* TrieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188832176114E00232A29 /* TrieClass.swift */; };
+		13E188862176169F00232A29 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188852176169F00232A29 /* DataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		13E188792175A1FF00232A29 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		13E1887E2175A30600232A29 /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 		13E188812175A52800232A29 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		13E188832176114E00232A29 /* TrieClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieClass.swift; sourceTree = "<group>"; };
+		13E188852176169F00232A29 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				13E1887D2175A2F300232A29 /* JSONs */,
+				13E188832176114E00232A29 /* TrieClass.swift */,
 				13E188812175A52800232A29 /* Model.swift */,
+				13E188852176169F00232A29 /* DataHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +248,8 @@
 				13E188822175A52800232A29 /* Model.swift in Sources */,
 				13E1887A2175A1FF00232A29 /* LocationViewController.swift in Sources */,
 				13E1885C21759EFE00232A29 /* CitiesViewController.swift in Sources */,
+				13E188842176114E00232A29 /* TrieClass.swift in Sources */,
+				13E188862176169F00232A29 /* DataHandler.swift in Sources */,
 				13E1885A21759EFE00232A29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -390,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

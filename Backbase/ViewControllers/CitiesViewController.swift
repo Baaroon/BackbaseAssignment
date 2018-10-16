@@ -10,6 +10,7 @@ import UIKit
 
 class CitiesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var cities: [CityStruct] = []
     
@@ -49,20 +50,19 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension CitiesViewController {
-    fileprivate func loadData() {
-        if let url = Bundle.main.url(forResource: "Cities", withExtension: "json"),
-            let data = try? Data.init(contentsOf: url) {
-            cities = try! JSONDecoder().decode([CityStruct].self, from: data)
-        }
-    }
-}
-
-extension CitiesViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showOnMapSegue", let city = sender as? CityStruct {
             let dest = segue.destination as! LocationViewController
             dest.coordinate = city.coord
         }
      }
+}
+
+extension CitiesViewController {
+    fileprivate func loadData() {
+        let citiesTrie = DataHandler.getDataInTrie()
+        cities = citiesTrie.words.sorted { $0.name < $1.name && $0.country < $0.country }
+        tableView.reloadData()
+    }
 }
 
