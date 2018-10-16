@@ -11,10 +11,11 @@ import MapKit
 class LocationViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
-    var coordinate: CoordinateStruct?
+    var city: CityStruct?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = city?.name ?? "Location"
         loadMap()
     }
 }
@@ -22,7 +23,7 @@ class LocationViewController: UIViewController {
 extension LocationViewController {
     fileprivate func loadMap() {
         let pin = MKPointAnnotation()
-        pin.coordinate = CLLocationCoordinate2D(latitude: coordinate?.lat ?? 0, longitude: coordinate?.lon ?? 0)
+        pin.coordinate = CLLocationCoordinate2D(latitude: city?.coord.lat ?? 0, longitude: city?.coord.lon ?? 0)
         let viewRegion = MKCoordinateRegion(center: pin.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000);
         let adjustedRegion = mapView.regionThatFits(viewRegion)
         mapView.setRegion(adjustedRegion, animated: true)

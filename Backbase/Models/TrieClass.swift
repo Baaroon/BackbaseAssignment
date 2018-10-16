@@ -65,7 +65,6 @@ extension Trie {
             }
         }
 
-        guard !currentNode.isTerminating else { return }
         wordCount += 1
         currentNode.isTerminating = true
         currentNode.data = data

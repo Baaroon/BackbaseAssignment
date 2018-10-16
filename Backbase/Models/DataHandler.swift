@@ -9,18 +9,20 @@
 import Foundation
 
 class DataHandler {
+    
     class func getDataInTrie() -> Trie<CityStruct> {
         var cities: [CityStruct] = []
         let trie = Trie<CityStruct>()
+        
         if let url = Bundle.main.url(forResource: "Cities", withExtension: "json"),
             let data = try? Data.init(contentsOf: url) {
             cities = try! JSONDecoder().decode([CityStruct].self, from: data)
-            cities.sort { $0.name < $1.name }
+            cities.sort { $0.name <= $1.name && $0.country <= $0.country }
             
-            cities.forEach {
-                trie.insert(word: $0.name, data: $0)
-            }
+            cities.forEach { trie.insert(word: $0.name, data: $0) }
         }
         return trie
     }
+    
+    
 }
