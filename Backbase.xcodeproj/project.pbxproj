@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		13E1885A21759EFE00232A29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1885921759EFE00232A29 /* AppDelegate.swift */; };
-		13E1885C21759EFE00232A29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1885B21759EFE00232A29 /* ViewController.swift */; };
+		13E1885C21759EFE00232A29 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1885B21759EFE00232A29 /* CitiesViewController.swift */; };
 		13E1885F21759EFE00232A29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E1885D21759EFE00232A29 /* Main.storyboard */; };
 		13E1886121759F0100232A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E1886021759F0100232A29 /* Assets.xcassets */; };
 		13E1886421759F0100232A29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E1886221759F0100232A29 /* LaunchScreen.storyboard */; };
 		13E1886F21759F0100232A29 /* BackbaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1886E21759F0100232A29 /* BackbaseTests.swift */; };
+		13E1887A2175A1FF00232A29 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188792175A1FF00232A29 /* LocationViewController.swift */; };
+		13E1887F2175A30600232A29 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E1887E2175A30600232A29 /* cities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,7 @@
 /* Begin PBXFileReference section */
 		13E1885621759EFE00232A29 /* Backbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Backbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E1885921759EFE00232A29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13E1885B21759EFE00232A29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13E1885B21759EFE00232A29 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		13E1885E21759EFE00232A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13E1886021759F0100232A29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13E1886321759F0100232A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		13E1886A21759F0100232A29 /* BackbaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackbaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E1886E21759F0100232A29 /* BackbaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseTests.swift; sourceTree = "<group>"; };
 		13E1887021759F0100232A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13E188792175A1FF00232A29 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		13E1887E2175A30600232A29 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				13E1885921759EFE00232A29 /* AppDelegate.swift */,
-				13E1885B21759EFE00232A29 /* ViewController.swift */,
-				13E1885D21759EFE00232A29 /* Main.storyboard */,
-				13E1886021759F0100232A29 /* Assets.xcassets */,
-				13E1886221759F0100232A29 /* LaunchScreen.storyboard */,
+				13E1887D2175A2F300232A29 /* JSONs */,
+				13E1887B2175A21300232A29 /* ViewControllers */,
+				13E1887C2175A22800232A29 /* Designs */,
 				13E1886521759F0100232A29 /* Info.plist */,
 			);
 			path = Backbase;
@@ -94,6 +97,33 @@
 				13E1887021759F0100232A29 /* Info.plist */,
 			);
 			path = BackbaseTests;
+			sourceTree = "<group>";
+		};
+		13E1887B2175A21300232A29 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				13E1885B21759EFE00232A29 /* CitiesViewController.swift */,
+				13E188792175A1FF00232A29 /* LocationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		13E1887C2175A22800232A29 /* Designs */ = {
+			isa = PBXGroup;
+			children = (
+				13E1886021759F0100232A29 /* Assets.xcassets */,
+				13E1885D21759EFE00232A29 /* Main.storyboard */,
+				13E1886221759F0100232A29 /* LaunchScreen.storyboard */,
+			);
+			path = Designs;
+			sourceTree = "<group>";
+		};
+		13E1887D2175A2F300232A29 /* JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				13E1887E2175A30600232A29 /* cities.json */,
+			);
+			path = JSONs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E1887F2175A30600232A29 /* cities.json in Resources */,
 				13E1886421759F0100232A29 /* LaunchScreen.storyboard in Resources */,
 				13E1886121759F0100232A29 /* Assets.xcassets in Resources */,
 				13E1885F21759EFE00232A29 /* Main.storyboard in Resources */,
@@ -197,7 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E1885C21759EFE00232A29 /* ViewController.swift in Sources */,
+				13E1887A2175A1FF00232A29 /* LocationViewController.swift in Sources */,
+				13E1885C21759EFE00232A29 /* CitiesViewController.swift in Sources */,
 				13E1885A21759EFE00232A29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
