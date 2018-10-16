@@ -12,22 +12,20 @@ class CitiesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var cities: [CityStruct] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    fileprivate var cities: [CityStruct] = []
     
-    lazy var citiesTrie = {
+    fileprivate lazy var citiesTrie = {
         return DataHandler.getDataInTrie(fileName: "Cities")
     }()
     
-    var cache = NSCache<NSString, NSArray>()
+    fileprivate var cache = NSCache<NSString, NSArray>()
+    
+    fileprivate var isLoading = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         loadData()
-        tableView.contentOffset = CGPoint(x: 0, y: 44)
     }
 }
 
@@ -37,21 +35,30 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        return isLoading ? 1 : cities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell")!
-        let city = cities[indexPath.row]
-        cell.textLabel?.text = city.name
-        cell.detailTextLabel?.text = city.country
-        
-        return cell
+        if isLoading { return getLoadingCell() }
+        return getCityCell(for: cities[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchBar.resignFirstResponder()
         performSegue(withIdentifier: "showOnMapSegue", sender: cities[indexPath.row])
+    }
+}
+
+extension CitiesViewController {
+    fileprivate func getLoadingCell() -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "loadingCell")!
+    }
+    
+    fileprivate func getCityCell(for city: CityStruct) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell")!
+        cell.textLabel?.text = city.name
+        cell.detailTextLabel?.text = city.country
+        return cell
     }
 }
 
@@ -66,8 +73,20 @@ extension CitiesViewController {
 
 extension CitiesViewController {
     fileprivate func loadData() {
-        cities = citiesTrie.words.sorted { $0.name <= $1.name && $0.country <= $0.country }
-        cache.setObject(cities as NSArray, forKey: "")
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.cities = self.citiesTrie.words.sorted { $0.name <= $1.name && $0.country <= $0.country }
+            self.isLoading = false
+            self.cache.setObject(self.cities as NSArray, forKey: "")
+            DispatchQueue.main.async {
+                self.searchBar.frame.size.height = 44
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    fileprivate func setupUI() {
+        tableView.tableFooterView = UIView(frame: .zero)
+        searchBar.frame.size.height = 0
     }
 }
 
@@ -76,9 +95,10 @@ extension CitiesViewController: UISearchBarDelegate {
         if let cachedResult = cache.object(forKey: searchText as NSString) {
             cities = cachedResult as! [CityStruct]
         } else {
-            cities = citiesTrie.findWordsWithPrefix(prefix: searchText)
-            cache.setObject(cities as NSArray, forKey: searchText as NSString)
+            cities = self.citiesTrie.findWordsWithPrefix(prefix: searchText)
+            cache.setObject(self.cities as NSArray, forKey: searchText as NSString)
         }
+        tableView.reloadData()
     }
 }
 
