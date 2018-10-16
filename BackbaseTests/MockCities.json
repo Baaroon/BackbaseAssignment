@@ -1,0 +1,8 @@
+[
+    {"country":"US","name":"Alabama","_id":4829764,"coord":{"lon":-86.750259,"lat":32.750408}},
+    {"country":"AU","name":"Sydney","_id":2147714,"coord":{"lon":151.207321,"lat":-33.867851}},
+    {"country":"US","name":"Albuquerque","_id":5454711,"coord":{"lon":-106.651138,"lat":35.084492}},
+    {"country":"IR","name":"Tehran","_id":112931,"coord":{"lon":51.421509,"lat":35.694389}},
+    {"country":"HN","name":"Arizona","_id":3615069,"coord":{"lon":-87.316673,"lat":15.63333}},
+    {"country":"US","name":"Anaheim","_id":5323810,"coord":{"lon":-117.914497,"lat":33.835289}},
+]

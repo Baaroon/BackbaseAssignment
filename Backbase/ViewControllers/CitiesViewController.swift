@@ -19,7 +19,7 @@ class CitiesViewController: UIViewController {
     }
     
     lazy var citiesTrie = {
-        return DataHandler.getDataInTrie()
+        return DataHandler.getDataInTrie(fileName: "Cities")
     }()
     
     var cache = NSCache<NSString, NSArray>()

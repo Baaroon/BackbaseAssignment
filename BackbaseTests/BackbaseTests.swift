@@ -10,25 +10,22 @@ import XCTest
 @testable import Backbase
 
 class BackbaseTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testCitiesCount() {
+        let trie = DataHandler.getDataInTrie(fileName: "MockCities")
+        XCTAssert(trie.words.count == 6, "Error loading cities")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testFindPrefix() {
+        let trie = DataHandler.getDataInTrie(fileName: "MockCities")
+        let cities = trie.findWordsWithPrefix(prefix: "A")
+        
+        XCTAssert(cities.count == 4, "Error in finding algorithm")
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testNotFound() {
+        let trie = DataHandler.getDataInTrie(fileName: "MockCities")
+        let cities = trie.findWordsWithPrefix(prefix: "Tehrab")
+        
+        XCTAssert(cities.count == 0, "Error in finding algorithm")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

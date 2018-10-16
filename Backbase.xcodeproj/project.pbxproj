@@ -18,6 +18,8 @@
 		13E188822175A52800232A29 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188812175A52800232A29 /* Model.swift */; };
 		13E188842176114E00232A29 /* TrieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188832176114E00232A29 /* TrieClass.swift */; };
 		13E188862176169F00232A29 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188852176169F00232A29 /* DataHandler.swift */; };
+		13E1888821763CEE00232A29 /* MockCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E1888721763CEE00232A29 /* MockCities.json */; };
+		13E1888A21763FAD00232A29 /* MockCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E1888721763CEE00232A29 /* MockCities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,7 @@
 		13E188812175A52800232A29 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		13E188832176114E00232A29 /* TrieClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieClass.swift; sourceTree = "<group>"; };
 		13E188852176169F00232A29 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		13E1888721763CEE00232A29 /* MockCities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockCities.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 		13E1886D21759F0100232A29 /* BackbaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				13E1888721763CEE00232A29 /* MockCities.json */,
 				13E1886E21759F0100232A29 /* BackbaseTests.swift */,
 				13E1887021759F0100232A29 /* Info.plist */,
 			);
@@ -224,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E1888A21763FAD00232A29 /* MockCities.json in Resources */,
 				13E1887F2175A30600232A29 /* Cities.json in Resources */,
 				13E1886421759F0100232A29 /* LaunchScreen.storyboard in Resources */,
 				13E1886121759F0100232A29 /* Assets.xcassets in Resources */,
@@ -235,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E1888821763CEE00232A29 /* MockCities.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

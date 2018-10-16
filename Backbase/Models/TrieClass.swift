@@ -17,9 +17,6 @@ class TrieNode<T: Hashable, U> {
     var data: U?
     var children: [T: TrieNode] = [:]
     var isTerminating = false
-    var isLeaf: Bool {
-        return children.count == 0
-    }
 
     init(value: T? = nil, parentNode: TrieNode? = nil) {
         self.value = value
@@ -33,7 +30,6 @@ class TrieNode<T: Hashable, U> {
         children[value] = TrieNode(value: value, parentNode: self)
     }
 }
-
 
 class Trie<T> {
     typealias Node = TrieNode<Character, T>
