@@ -7,6 +7,7 @@
 //
 
 //  Trie DataStructure From: https://github.com/raywenderlich/swift-algorithm-club
+//  I think to use the Trie data structure for optimizing the search process. It generally is a Tree structure which groups words by their prefixes in a tree format. So to find a list of words for a certain prefix, it starts from root and traverse the path throught the middle nodes to reach the leaves. It can find a item on length N in O(N) and it's efficient enough to be used for this problem.
 
 import Foundation
 

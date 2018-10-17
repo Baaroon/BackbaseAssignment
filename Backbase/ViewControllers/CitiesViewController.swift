@@ -92,6 +92,7 @@ extension CitiesViewController {
 
 extension CitiesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Save previous search results in cache, so search results will be ready very soon when user searchs for repeated prefixes or deletes characters. In this case, we don't need to traverse our data structure repeatedly
         if let cachedResult = cache.object(forKey: searchText as NSString) {
             cities = cachedResult as! [CityStruct]
         } else {
