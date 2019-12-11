@@ -8,12 +8,16 @@
 
 import Foundation
 
-class DataHandler {
-    class func getDataInTrie(fileName: String) -> Trie<CityStruct> {
+protocol DataHandlerProtocol {
+    func getDataInTrie() -> Trie<CityStruct>
+}
+
+class DataHandler: DataHandlerProtocol {
+    func getDataInTrie() -> Trie<CityStruct> {
         var cities: [CityStruct] = []
         let trie = Trie<CityStruct>()
         
-        if let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
+        if let url = Bundle.main.url(forResource: "Cities", withExtension: "json"),
             let data = try? Data.init(contentsOf: url) {
             cities = try! JSONDecoder().decode([CityStruct].self, from: data)
             cities.sort { $0.name <= $1.name && $0.country <= $0.country }

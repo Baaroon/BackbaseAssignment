@@ -9,18 +9,29 @@
 import UIKit
 
 class CitiesViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     fileprivate var cities: [CityStruct] = []
     
     fileprivate lazy var citiesTrie = {
-        return DataHandler.getDataInTrie(fileName: "Cities")
+        return dataHandler.getDataInTrie()
     }()
     
     fileprivate var cache = NSCache<NSString, NSArray>()
     
     fileprivate var isLoading = true
+    fileprivate var dataHandler: DataHandlerProtocol
+    
+    lazy var tableView: UITableView = UITableView(frame: .zero, style: .plain)
+    lazy var searchBar = UISearchBar()
+    
+    init(dataHandler: DataHandlerProtocol) {
+        self.dataHandler = dataHandler
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Not implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +56,10 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchBar.resignFirstResponder()
-        performSegue(withIdentifier: "showOnMapSegue", sender: cities[indexPath.row])
+
+        let dest = LocationViewController(city: cities[indexPath.row])
+        
+        navigationController?.pushViewController(dest, animated: true)
     }
 }
 
@@ -63,15 +77,6 @@ extension CitiesViewController {
 }
 
 extension CitiesViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showOnMapSegue", let city = sender as? CityStruct {
-            let dest = segue.destination as! LocationViewController
-            dest.city = city
-        }
-    }
-}
-
-extension CitiesViewController {
     fileprivate func loadData() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.cities = self.citiesTrie.words.sorted { $0.name <= $1.name && $0.country <= $0.country }
@@ -85,8 +90,34 @@ extension CitiesViewController {
     }
     
     fileprivate func setupUI() {
+        title = "Cities"
+        
+        [searchBar, tableView].forEach {
+            view.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        tableView.accessibilityIdentifier = "tableview"
+        
+        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        searchBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        searchBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        searchBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        searchBar.delegate = self
+                
         tableView.tableFooterView = UIView(frame: .zero)
         searchBar.frame.size.height = 0
+        
+        tableView.register(UINib(nibName: "LoadingCell", bundle: Bundle.main   ), forCellReuseIdentifier: "loadingCell")
+        tableView.register(UINib(nibName: "CityTableViewCell", bundle: Bundle.main   ), forCellReuseIdentifier: "cityCell")
     }
 }
 
@@ -99,6 +130,7 @@ extension CitiesViewController: UISearchBarDelegate {
             cities = self.citiesTrie.findWordsWithPrefix(prefix: searchText)
             cache.setObject(self.cities as NSArray, forKey: searchText as NSString)
         }
+        
         tableView.reloadData()
     }
 }

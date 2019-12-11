@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		13E1885A21759EFE00232A29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1885921759EFE00232A29 /* AppDelegate.swift */; };
 		13E1885C21759EFE00232A29 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1885B21759EFE00232A29 /* CitiesViewController.swift */; };
-		13E1885F21759EFE00232A29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E1885D21759EFE00232A29 /* Main.storyboard */; };
 		13E1886121759F0100232A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E1886021759F0100232A29 /* Assets.xcassets */; };
 		13E1886421759F0100232A29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E1886221759F0100232A29 /* LaunchScreen.storyboard */; };
 		13E1886F21759F0100232A29 /* BackbaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1886E21759F0100232A29 /* BackbaseTests.swift */; };
@@ -20,6 +19,10 @@
 		13E188862176169F00232A29 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E188852176169F00232A29 /* DataHandler.swift */; };
 		13E1888821763CEE00232A29 /* MockCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E1888721763CEE00232A29 /* MockCities.json */; };
 		13E1888A21763FAD00232A29 /* MockCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E1888721763CEE00232A29 /* MockCities.json */; };
+		8D7A474B239FB5C10080ECD2 /* CitiesViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE47F48239FAF9700719468 /* CitiesViewControllerUITests.swift */; };
+		8DE47F35239F969F00719468 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE47F34239F969F00719468 /* LoadingCell.xib */; };
+		8DE47F38239F96F900719468 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE47F36239F96F900719468 /* CityTableViewCell.swift */; };
+		8DE47F39239F96F900719468 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE47F37239F96F900719468 /* CityTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 		13E1885621759EFE00232A29 /* Backbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Backbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E1885921759EFE00232A29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13E1885B21759EFE00232A29 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
-		13E1885E21759EFE00232A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13E1886021759F0100232A29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13E1886321759F0100232A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13E1886521759F0100232A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		13E188832176114E00232A29 /* TrieClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieClass.swift; sourceTree = "<group>"; };
 		13E188852176169F00232A29 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		13E1888721763CEE00232A29 /* MockCities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockCities.json; sourceTree = "<group>"; };
+		8DE47F34239F969F00719468 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		8DE47F36239F96F900719468 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		8DE47F37239F96F900719468 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		8DE47F48239FAF9700719468 /* CitiesViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewControllerUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 			children = (
 				13E1888721763CEE00232A29 /* MockCities.json */,
 				13E1886E21759F0100232A29 /* BackbaseTests.swift */,
+				8DE47F48239FAF9700719468 /* CitiesViewControllerUITests.swift */,
 				13E1887021759F0100232A29 /* Info.plist */,
 			);
 			path = BackbaseTests;
@@ -122,8 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				13E1886021759F0100232A29 /* Assets.xcassets */,
-				13E1885D21759EFE00232A29 /* Main.storyboard */,
 				13E1886221759F0100232A29 /* LaunchScreen.storyboard */,
+				8DE47F34239F969F00719468 /* LoadingCell.xib */,
+				8DE47F36239F96F900719468 /* CityTableViewCell.swift */,
+				8DE47F37239F96F900719468 /* CityTableViewCell.xib */,
 			);
 			path = Designs;
 			sourceTree = "<group>";
@@ -191,7 +200,7 @@
 		13E1884E21759EFE00232A29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Zahra Aghajani";
 				TargetAttributes = {
@@ -200,6 +209,7 @@
 					};
 					13E1886921759F0100232A29 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1110;
 						TestTargetID = 13E1885521759EFE00232A29;
 					};
 				};
@@ -230,9 +240,10 @@
 			files = (
 				13E1888A21763FAD00232A29 /* MockCities.json in Resources */,
 				13E1887F2175A30600232A29 /* Cities.json in Resources */,
+				8DE47F35239F969F00719468 /* LoadingCell.xib in Resources */,
 				13E1886421759F0100232A29 /* LaunchScreen.storyboard in Resources */,
+				8DE47F39239F96F900719468 /* CityTableViewCell.xib in Resources */,
 				13E1886121759F0100232A29 /* Assets.xcassets in Resources */,
-				13E1885F21759EFE00232A29 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13E188822175A52800232A29 /* Model.swift in Sources */,
+				8DE47F38239F96F900719468 /* CityTableViewCell.swift in Sources */,
 				13E1887A2175A1FF00232A29 /* LocationViewController.swift in Sources */,
 				13E1885C21759EFE00232A29 /* CitiesViewController.swift in Sources */,
 				13E188842176114E00232A29 /* TrieClass.swift in Sources */,
@@ -265,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13E1886F21759F0100232A29 /* BackbaseTests.swift in Sources */,
+				8D7A474B239FB5C10080ECD2 /* CitiesViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,14 +292,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13E1885D21759EFE00232A29 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13E1885E21759EFE00232A29 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		13E1886221759F0100232A29 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -349,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -404,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -427,7 +432,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.Backbase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -445,7 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.Backbase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -465,7 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.BackbaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Backbase.app/Backbase";
 			};
@@ -486,7 +491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.BackbaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Backbase.app/Backbase";
 			};
